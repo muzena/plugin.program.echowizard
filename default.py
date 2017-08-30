@@ -64,7 +64,7 @@ from resources.lib.modules import cache_dir
 
 AddonTitle          ="[COLOR yellowgreen]ECHO[/COLOR] [COLOR white]Wizard[/COLOR]"
 AddonData           = xbmc.translatePath('special://userdata/addon_data')
-USERDATA            =  xbmc.translatePath(os.path.join('special://home/userdata',''))
+USERDATA            =  xbmc.translatePath(os.path.join('special://profile/userdata',''))
 addon_id            = 'plugin.program.echowizard'
 ADDON               = xbmcaddon.Addon(id=addon_id)
 CHANGELOG           =  xbmc.translatePath(os.path.join('special://home/addons/' + addon_id,'changelog.txt'))
@@ -73,16 +73,16 @@ RESOURCES           =  xbmc.translatePath(os.path.join('special://home/addons/' 
 NOTICE              =  xbmc.translatePath(os.path.join('special://home/addons/' + addon_id,'resources/NOTICE.txt'))
 GET_VERSION         =  xbmc.translatePath('special://home/addons/' + addon_id + '/addon.xml')
 DEFAULT_SETTINGS    =  xbmc.translatePath(os.path.join('special://home/addons/' + addon_id,'resources/files/settings_default.xml'))
-ADDON_DATA          =  xbmc.translatePath(os.path.join('special://home/userdata/addon_data/' + addon_id))
-ECHO_SETTINGS       =  xbmc.translatePath(os.path.join('special://home/userdata/addon_data/' + addon_id,'settings.xml'))
-TEMP_FOLDER         =  xbmc.translatePath(os.path.join('special://home/userdata/addon_data/' + addon_id,'temp'))
-TEMP_FILE           =  xbmc.translatePath(os.path.join('special://home/userdata/addon_data/' + addon_id,'temp/temp.xml'))
-TEMP_ADDONS         =  xbmc.translatePath(os.path.join('special://home/userdata/addon_data/' + addon_id,'temp/temp_installer.xml'))
-KODIAPPS_FILE       =  xbmc.translatePath(os.path.join('special://home/userdata/addon_data/' + addon_id,'temp/kodiapps.xml'))
-COMMUNITY_BUILD		=  xbmc.translatePath(os.path.join('special://home/userdata/','community_build.txt'))
-COMMUNITY_OTA		=  xbmc.translatePath(os.path.join('special://home/userdata/','echo_community_ota.txt'))
-KEYBOARD_FILE       =  xbmc.translatePath(os.path.join('special://home/userdata/keymaps/','keyboard.xml'))
-ADVANCED_SET_FILE   =  xbmc.translatePath(os.path.join('special://home/userdata/','advancedsettings.xml'))
+ADDON_DATA          =  xbmc.translatePath(os.path.join('special://profile/addon_data/' + addon_id))
+ECHO_SETTINGS       =  xbmc.translatePath(os.path.join('special://profile/addon_data/' + addon_id,'settings.xml'))
+TEMP_FOLDER         =  xbmc.translatePath(os.path.join('special://profile/addon_data/' + addon_id,'temp'))
+TEMP_FILE           =  xbmc.translatePath(os.path.join('special://profile/addon_data/' + addon_id,'temp/temp.xml'))
+TEMP_ADDONS         =  xbmc.translatePath(os.path.join('special://profile/addon_data/' + addon_id,'temp/temp_installer.xml'))
+KODIAPPS_FILE       =  xbmc.translatePath(os.path.join('special://profile/addon_data/' + addon_id,'temp/kodiapps.xml'))
+COMMUNITY_BUILD		=  xbmc.translatePath(os.path.join('special://profile/','community_build.txt'))
+COMMUNITY_OTA		=  xbmc.translatePath(os.path.join('special://profile/','echo_community_ota.txt'))
+KEYBOARD_FILE       =  xbmc.translatePath(os.path.join('special://profile/keymaps/','keyboard.xml'))
+ADVANCED_SET_FILE   =  xbmc.translatePath(os.path.join('special://profile/','advancedsettings.xml'))
 dp                  =  xbmcgui.DialogProgress()
 skin                =  xbmc.getSkinDir()
 string              = ""
@@ -339,14 +339,13 @@ def INDEX():
 				Common.addItem('[COLOR yellowgreen][B]' + CURRENT_BUILD.upper() + ' IS UP TO DATE![/B][/COLOR]',BASEURL,4,UPDATE_ICON,FANART,'')
 		except:
 			Common.addItem('[COLOR ghostwhite][B]ERROR RETRIEVING INFORMATION[/B][/COLOR]',BASEURL,4,UPDATE_ICON,FANART,'')
-	Common.addItem("[COLOR yellowgreen][B]--------------------------[/B][/COLOR]",BASEURL,79,ICON,FANART,'')
 	Common.addItem("[COLOR white][B]ECHO WIZARD VERSION:[/COLOR] [COLOR yellowgreen]" + str(addon_version) + "[/B][/COLOR]",'url',999,ICON,FANART,'')
 	Common.addItem("[COLOR white][B]KODI VERSION:[/COLOR] [COLOR yellowgreen]" + str(kodi_details) + "[/B][/COLOR]",'url',999,ICON,FANART,'')
 	Common.addItem("[COLOR yellowgreen][B]--------------------------[/B][/COLOR]",BASEURL,79,ICON,FANART,'')
 	Common.addDir('[COLOR ghostwhite][B]KODIAPPS ADDON CHART[/B][/COLOR]',BASEURL,185,KODIAPPS_ICON,KODIAPPS_FANART,'')
 	Common.addItem("[COLOR yellowgreen][B]--------------------------[/B][/COLOR]",BASEURL,79,ICON,FANART,'')
 	#Common.addItem('[COLOR ghostwhite][B]RUN THE ECHO SECURITY CHECK[/COLOR][/B]',BASEURL,181,TOOLS_ICON,FANART,'')
-	Common.addDir('[COLOR ghostwhite][B]SOURCE AND REPOSITORY STATUS CHECKER[/COLOR][/B]',BASEURL,184,KODIAPPS_ICON,KODIAPPS_FANART,'Information brought to you by kodiapps.com')
+	#Common.addDir('[COLOR ghostwhite][B]SOURCE AND REPOSITORY STATUS CHECKER[/COLOR][/B]',BASEURL,184,KODIAPPS_ICON,KODIAPPS_FANART,'Information brought to you by kodiapps.com')
 	Common.addDir('[COLOR ghostwhite][B]BACKUP [COLOR white]|[/COLOR] RESTORE[/B][/COLOR]',BASEURL,8,BACKUP_ICON,FANART,'')
 	Common.addDir('[COLOR ghostwhite][B]MAINTENANCE TOOLS[/COLOR][/B]',BASEURL,5,TOOLS_ICON,FANART,'')
 	Common.addItem('[COLOR ghostwhite][B]VIEW ALL ERRORS IN LOG FILE[/B][/COLOR]',BASEURL,155,ERROR_ICON,FANART,'')
@@ -505,7 +504,7 @@ def MAINTENANCE_MENU():
 
 	HOME          =  xbmc.translatePath('special://home/')
 	PACKAGES      =  xbmc.translatePath(os.path.join('special://home/addons','packages'))
-	THUMBS        =  xbmc.translatePath(os.path.join('special://home/userdata','Thumbnails'))
+	THUMBS        =  xbmc.translatePath(os.path.join('special://profile/userdata','Thumbnails'))
 	CACHE_FOLDER  =  xbmc.translatePath(os.path.join('special://home','cache'))
 	TEMP_FOLDER   =  xbmc.translatePath(os.path.join('special://','temp'))
 	CACHE         =  "NULL"
@@ -621,7 +620,7 @@ def MAINTENANCE_MENU():
 	Common.addItem('[COLOR white]Unhide All Passwords[/COLOR]','url',37,TOOLS_ICON,FANART,'')
 	Common.addItem('[COLOR white]Base64 - Encode | Decode[/COLOR]','url',117,TOOLS_ICON,FANART,'')
 	Common.addItem('[COLOR white]Turn Debugging On/Off[/COLOR]','url',127,TOOLS_ICON,FANART,'')
-	Common.addItem('[COLOR white]Open Addon Settings (Exodus, SALTS, Specto)[/COLOR]','url',126,TOOLS_ICON,FANART,'')
+	Common.addItem('[COLOR white]Open Addon Settings (Covenant, Exodus, SALTS, Specto)[/COLOR]','url',126,TOOLS_ICON,FANART,'')
 	Common.addItem('[COLOR white]Force Close Kodi[/COLOR]','url',86,TOOLS_ICON,FANART,'')
 	Common.addDir('[B][COLOR red]SYSTEM RESET(CAUTION)[/COLOR][/B]','url',6,TOOLS_ICON,FANART,'')
 
@@ -1455,7 +1454,7 @@ def GET_KODIAPPS_INFORMATION(name,url,iconimage):
 		Common.TextBox("[COLOR yellowgreen]Kodiapps Addon Information[/COLOR]",display)
 	elif choice == 1:
 
-		SOURCES     =  xbmc.translatePath(os.path.join('special://home/userdata','sources.xml'))
+		SOURCES     =  xbmc.translatePath(os.path.join('special://profile/userdata','sources.xml'))
 		
 		try:
 			if not os.path.isfile(SOURCES):
@@ -1636,9 +1635,9 @@ def PLAYVIDEO(url):
 	
 def GETTEMP():
 
-	TEMP_FOLDER   =  xbmc.translatePath(os.path.join('special://home/userdata/addon_data/' + addon_id,'temp'))
-	TEMP_BUILDS   =  xbmc.translatePath(os.path.join('special://home/userdata/addon_data/' + addon_id,'temp/temp.xml'))
-	TEMP_ADDONS   =  xbmc.translatePath(os.path.join('special://home/userdata/addon_data/' + addon_id,'temp/temp_installer.xml'))
+	TEMP_FOLDER   =  xbmc.translatePath(os.path.join('special://profile/addon_data/' + addon_id,'temp'))
+	TEMP_BUILDS   =  xbmc.translatePath(os.path.join('special://profile/addon_data/' + addon_id,'temp/temp.xml'))
+	TEMP_ADDONS   =  xbmc.translatePath(os.path.join('special://profile/addon_data/' + addon_id,'temp/temp_installer.xml'))
 	BASEURL       =  base64.b64decode(b'aHR0cDovL2VjaG9jb2Rlci5jb20v')
 	BUILDS_API    =  BASEURL + base64.b64decode(b'YXBpL2FwaS5waHA/c2VydmljZT1idWlsZHMmYWN0aW9uPWNvdW50')
 	ADDONS_API    =  BASEURL + base64.b64decode(b'YXBpL2FwaS5waHA/c2VydmljZT1hZGRvbnMmYWN0aW9uPWNvdW50')
@@ -1713,7 +1712,7 @@ def CLEARTEMP():
 
 	dp.create(AddonTitle, "[COLOR yellowgreen]Removing ECHO Wizard temp files.[/COLOR]")
 	
-	TEMP_FOLDER      =  xbmc.translatePath(os.path.join('special://home/userdata/addon_data/' + addon_id,'temp'))
+	TEMP_FOLDER      =  xbmc.translatePath(os.path.join('special://profile/addon_data/' + addon_id,'temp'))
 
 	if os.path.exists(TEMP_FOLDER):
 		
@@ -1767,6 +1766,13 @@ def strip_tags(html):
 #						Which mode to select
 #######################################################################
 
+TEMP_FOLDER =  xbmc.translatePath(os.path.join('special://profile/addon_data/' + addon_id,'temp'))
+if not os.path.exists(TEMP_FOLDER):
+    os.makedirs(TEMP_FOLDER)
+TEMP_FILE =  xbmc.translatePath(os.path.join(TEMP_FOLDER,'temp.xml'))
+if not os.path.isfile(TEMP_FILE):
+	open(TEMP_FILE, 'w')
+    
 params=parameters.get_params()
 
 url=None

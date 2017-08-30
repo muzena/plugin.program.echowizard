@@ -1,3 +1,6 @@
+[COLOR yellowgreen]2.00.001: 30th August 2017[/COLOR]
+[COLOR white][B]- Bring many parts of Echo Wizard back online.[/B][/COLOR]
+
 [COLOR yellowgreen]1.96: 16th March 2017[/COLOR]
 [COLOR white][B]- Search function added to installer.[/B][/COLOR]
 [COLOR white][B]- Sort function added to installer.[/B][/COLOR]
