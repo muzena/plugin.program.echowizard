@@ -1,0 +1,92 @@
+# Addon Name: TVAddons Log Uploader for Kodi
+# Addon id: script.tvaddons.debug.log
+# Addon Provider: TV Addons
+msgid ""
+msgstr ""
+"Project-Id-Version: TV Addons Addons\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2017-10-03 23:14+0200\n"
+"Language-Team: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: hr\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+msgctxt "#30000"
+msgid "Logs Uploaded"
+msgstr "Zapisa poslano"
+
+msgctxt "#30001"
+msgid "Log Upload Failed: %s"
+msgstr "Neuspjelo slanje zapisa: %s"
+
+msgctxt "#30002"
+msgid "Do you want to upload your logs?"
+msgstr "Želite li poslati svoje zapise?"
+
+msgctxt "#30003"
+msgid "Email Successful"
+msgstr "E-pošta poslana uspješno"
+
+msgctxt "#30004"
+msgid "Email Failed"
+msgstr "E-pošta poslana neuspješno"
+
+msgctxt "#30005"
+msgid "Email Not Supported"
+msgstr "E-pošta nije podržana"
+
+msgctxt "#30006"
+msgid "Email Not Configured"
+msgstr "E-pošta nije podešena"
+
+msgctxt "#30007"
+msgid "*WARNING* Debug Logs may contain sensitive information!"
+msgstr "*UPOZORENJE* Zapisi otklanjanja grešaka mogu sadržavati povjerljive informacije!"
+
+msgctxt "#30008"
+msgid "Dropbox Authorization"
+msgstr "Dropbox ovjera"
+
+msgctxt "#30009"
+msgid "Visit this link: [COLOR blue]%s[/COLOR]"
+msgstr "Posjetite poveznicu: [COLOR blue]%s[/COLOR]"
+
+msgctxt "#30010"
+msgid "Then enter this PIN: %s"
+msgstr "Upišite PIN: %s"
+
+msgctxt "#30011"
+msgid "Then follow the directions to authorize access to your dropbox."
+msgstr "Zatim slijedite poveznicu za ovjeru pristupa vašem dropboxu."
+
+msgctxt "#30500"
+msgid "Destination Email Address"
+msgstr "Adresa e-pošte odredišta"
+
+msgctxt "#30501"
+msgid "Include Old Kodi Log"
+msgstr "Uključi stari Kodi zapis"
+
+msgctxt "#30502"
+msgid "Log Uploaders"
+msgstr "Pošiljatelji zapisa"
+
+msgctxt "#30503"
+msgid "Enable TVAddons.ag"
+msgstr "Omogući TVAddons.ag"
+
+msgctxt "#30504"
+msgid "Enable Dropbox"
+msgstr "Omogući Dropbox"
+
+msgctxt "#30505"
+msgid "Enable Pastebin"
+msgstr "Omogući Pastebin"
+
+msgctxt "#30506"
+msgid "Enable Ubuntu"
+msgstr "Omogući Ubuntu"
